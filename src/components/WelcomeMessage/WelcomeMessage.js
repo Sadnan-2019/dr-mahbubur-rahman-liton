@@ -33,12 +33,12 @@ const WelcomeMessage = () => {
               Welcome Message
             </span> */}
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
+            {/* <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
               
               <span className="text-primary block mt-2">
                 Dr. Mahbubur Rahman Liton
               </span>
-            </h2>
+            </h2> */}
 
             <div className="w-24 h-1 bg-primary rounded-full mt-6 mb-8"></div>
 
