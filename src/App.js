@@ -8,6 +8,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import About from './components/About/About';
 import MyWork from './components/MyWork/MyWork';
+import DevelopmentProjects from './components/DevelopmentProjects/DevelopmentProjects';
+import NewsUpdates from './components/Newsdata/Newsdata';
+import Gallery from './components/Gallery/Gallery';
 function App() {
 
 
@@ -25,6 +28,9 @@ function App() {
        <WelcomeMessage></WelcomeMessage>
        <About></About>
        <MyWork></MyWork>
+       <DevelopmentProjects></DevelopmentProjects>
+       <NewsUpdates></NewsUpdates>
+       <Gallery></Gallery>
 
     </div>
   );

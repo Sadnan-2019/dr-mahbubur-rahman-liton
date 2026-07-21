@@ -1,261 +1,135 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-// Swiper
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade, Pagination } from "swiper/modules";
-
-// Swiper CSS
-import "swiper/css";
-import "swiper/css/effect-fade";
-import "swiper/css/pagination";
-
-// Icons
+import { motion } from "framer-motion";
 import {
   FaArrowRight,
   FaBuildingColumns,
   FaUsers,
   FaRoad,
+  FaFileContract,
+  FaMicroscope,
 } from "react-icons/fa6";
 
-// Images
+// Assets
 import parliament1 from "../../assets/landing1.jpg";
-import parliament2 from "../../assets/landing2.jpg";
-import parliament3 from "../../assets/landing2.jpg";
 
-const slides = [
-  {
-    id: 1,
-    image: parliament1,
-    badge: "Parliament",
-    title: "Representing the Voice of the People",
-    highlight: "Responsible National Leadership",
-    description:
-      "Committed to strengthening democratic values, participating in parliamentary discussions, and supporting legislation that improves healthcare, education, infrastructure, and sustainable national development for every citizen.",
-    stats: [
-      {
-        icon: <FaBuildingColumns />,
-        title: "National Policy",
-      },
-      {
-        icon: <FaUsers />,
-        title: "Public Representation",
-      },
-      {
-        icon: <FaRoad />,
-        title: "Development",
-      },
-    ],
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
   },
+};
 
-  {
-    id: 2,
-    image: parliament2,
-    badge: "Healthcare",
-    title: "Improving Healthcare for Every Citizen",
-    highlight: "Accessible Medical Services",
-    description:
-      "Promoting quality healthcare, stronger hospitals, better medical education, and equal access to health services to improve the wellbeing of communities throughout Bangladesh.",
-    stats: [
-      {
-        icon: <FaBuildingColumns />,
-        title: "Healthcare",
-      },
-      {
-        icon: <FaUsers />,
-        title: "Medical Services",
-      },
-      {
-        icon: <FaRoad />,
-        title: "Community Care",
-      },
-    ],
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.25, 1, 0.5, 1] },
   },
-
-  {
-    id: 3,
-    image: parliament3,
-    badge: "Development",
-    title: "Building a Stronger Bangladesh Together",
-    highlight: "People First",
-    description:
-      "Supporting initiatives that enhance education, infrastructure, employment opportunities, youth empowerment, and sustainable community development across the country.",
-    stats: [
-      {
-        icon: <FaBuildingColumns />,
-        title: "Education",
-      },
-      {
-        icon: <FaUsers />,
-        title: "Youth",
-      },
-      {
-        icon: <FaRoad />,
-        title: "Infrastructure",
-      },
-    ],
-  },
-];
+};
 
 const Parliament = () => {
+  const pillars = [
+    {
+      id: 1,
+      icon: <FaFileContract />,
+      title: "Legislative Oversight",
+      description:
+        "Actively participating in parliamentary debates, shaping national policy, and introducing key bills for public welfare.",
+    },
+    {
+      id: 2,
+      icon: <FaMicroscope />,
+      title: "Healthcare Reform",
+      description:
+        "Advocating for increased national healthcare budget allocations and modernized medical facilities nationwide.",
+    },
+    {
+      id: 3,
+      icon: <FaRoad />,
+      title: "Infrastructure Development",
+      description:
+        "Securing government grants for major regional road networks, digital connectivity, and public transport infrastructure.",
+    },
+    {
+      id: 4,
+      icon: <FaUsers />,
+      title: "Public Representation",
+      description:
+        "Ensuring the direct concerns of grassroots constituents are clearly voiced on the National Parliament floor.",
+    },
+  ];
+
   return (
-    <section className="relative overflow-hidden rounded-[36px] bg-white shadow-2xl">
-
-      <Swiper
-        modules={[Autoplay, EffectFade, Pagination]}
-        effect="fade"
-        loop={true}
-        speed={900}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        className="parliamentSwiper"
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.2 }}
+      variants={containerVariants}
+      className="space-y-8"
+    >
+      {/* Top Banner Box */}
+      <motion.div
+        variants={itemVariants}
+        className="relative rounded-3xl overflow-hidden shadow-2xl bg-slate-900 min-h-[380px] flex items-center"
       >
-        {slides.map((slide) => (
-          <SwiperSlide key={slide.id}>
-            {/* Part 2 will go here */}
+        <img
+          src={parliament1}
+          alt="Parliamentary Leadership"
+          className="absolute inset-0 w-full h-full object-cover opacity-35"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
 
-            <div className="relative h-[620px] lg:h-[650px] overflow-hidden">
-
-  {/* Background Image */}
-
-  <img
-    src={slide.image}
-    alt={slide.title}
-    className="absolute inset-0 w-full h-full object-cover"
-  />
-
-  {/* Overlay */}
-
-  <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/70 to-slate-900/30"></div>
-
-  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-
-  {/* Content */}
-
-  <div className="relative z-10 h-full max-w-7xl mx-auto px-5 lg:px-10">
-
-    <div className="flex h-full items-center">
-
-      <div
-        className="max-w-3xl"
-        data-aos="fade-right"
-      >
-
-        {/* Badge */}
-
-        <span className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 text-white font-medium">
-
-          <FaBuildingColumns className="text-primary" />
-
-          {slide.badge}
-
-        </span>
-
-        {/* Heading */}
-
-        <h2 className="mt-8 text-4xl lg:text-6xl font-bold leading-tight text-white">
-
-          {slide.title}
-
-          <span className="block text-primary mt-3">
-
-            {slide.highlight}
-
+        <div className="relative z-10 p-8 sm:p-12 max-w-2xl">
+          <span className="inline-flex items-center gap-2 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-400/30 px-4 py-1.5 text-emerald-300 font-semibold text-xs sm:text-sm">
+            <FaBuildingColumns />
+            National Parliament (Jatiya Sangsad)
           </span>
 
-        </h2>
+          <h3 className="mt-4 text-2xl sm:text-4xl font-black text-white leading-tight">
+            Representing the Voice & Future of the People
+          </h3>
 
-        {/* Description */}
+          <p className="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed">
+            Committed to strengthening democratic values, participating in policy discussions,
+            and supporting legislation that improves healthcare, education, and infrastructure.
+          </p>
 
-        <p className="mt-8 text-lg leading-8 text-slate-200 max-w-2xl">
-
-          {slide.description}
-
-        </p>
-
-        {/* CTA */}
-
-        <div className="mt-10 flex flex-wrap gap-5">
-
-          <Link
-            to="/parliament"
-            className="btn btn-primary rounded-full px-8"
-          >
-            Explore Parliament
-
-            <FaArrowRight />
-          </Link>
-
-          <Link
-            to="/contact"
-            className="btn btn-outline text-white border-white hover:bg-white hover:text-slate-900 rounded-full px-8"
-          >
-            Contact Office
-          </Link>
-
-        </div>
-
-        {/* Features */}
-
-        {/* <div className="grid sm:grid-cols-3 gap-5 mt-14">
-
-          {slide.stats.map((item, index) => (
-
-            <div
-              key={index}
-              className="
-                rounded-3xl
-                bg-white/10
-                backdrop-blur-xl
-                border
-                border-white/20
-                p-6
-                transition-all
-                duration-500
-                hover:bg-primary
-                hover:border-primary
-              "
+          <div className="mt-6 flex flex-wrap gap-4">
+            <Link
+              to="/parliament"
+              className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 text-sm shadow-lg shadow-emerald-950/50"
             >
+              <span>Explore Parliamentary Work</span>
+              <FaArrowRight className="text-xs" />
+            </Link>
+          </div>
+        </div>
+      </motion.div>
 
-              <div className="text-3xl text-white mb-5">
-
-                {item.icon}
-
+      {/* 4 Pillars Grid */}
+      <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {pillars.map((pillar) => (
+          <div
+            key={pillar.id}
+            className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+          >
+            <div>
+              <div className="w-12 h-12 rounded-xl bg-emerald-600/10 text-emerald-700 flex items-center justify-center text-xl font-bold mb-4">
+                {pillar.icon}
               </div>
-
-              <h3 className="text-lg font-semibold text-white">
-
-                {item.title}
-
-              </h3>
-
+              <h4 className="text-lg font-bold text-slate-900 mb-2">{pillar.title}</h4>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                {pillar.description}
+              </p>
             </div>
-
-          ))}
-
-        </div> */}
-
-      </div>
-
-    </div>
-
-  </div>
-
-  {/* Bottom Decoration */}
-
-  <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-950 to-transparent"></div>
-
-</div>
-          </SwiperSlide>
+          </div>
         ))}
-      </Swiper>
-    </section>
+      </motion.div>
+    </motion.div>
   );
 };
 
-export default Parliament;
+export default Parliament;  

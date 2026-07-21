@@ -1,14 +1,52 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   FaUserGraduate,
   FaBriefcase,
   FaBullseye,
-  FaArrowRight,
 } from "react-icons/fa6";
 import { MdOutlineHealthAndSafety } from "react-icons/md";
-import { Link } from "react-router-dom";
 
+// Asset import - update the path if needed
 import profile from "../../assets/welcome.jpg";
+
+// Motion Variants
+const headerVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] },
+  },
+};
+
+const leftColVariants = {
+  hidden: { opacity: 0, x: -40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] },
+  },
+};
+
+const timelineContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const timelineCardVariants = {
+  hidden: { opacity: 0, x: 40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, ease: [0.25, 1, 0.5, 1] },
+  },
+};
 
 const About = () => {
   const timeline = [
@@ -17,7 +55,7 @@ const About = () => {
       icon: <MdOutlineHealthAndSafety />,
       title: "Biography",
       description:
-        "Dr. Mahbubur Rahman Liton was born into a respected Muslim family in Kanthal Union, Trishal. His father, Alhaj Md. Habibur Rahman, is an agriculturist, while his late mother, Farida Akhter, was a renowned teacher. He believes public service begins with honesty, compassion, and accountability.",
+        "Dr. Mahbubur Rahman Liton was born into a respected family in Kanthal Union, Trishal. His father, Alhaj Md. Habibur Rahman, is an agriculturist, while his late mother, Farida Akhter, was a renowned teacher. He believes public service begins with honesty, compassion, and accountability.",
     },
     {
       id: 2,
@@ -43,181 +81,150 @@ const About = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden py-20 lg:py-28 bg-slate-50">
-      {/* Background Decoration */}
+    <section className="relative overflow-hidden py-16 sm:py-20 lg:py-28 bg-slate-50">
+      {/* Background Glows */}
+      <div className="absolute top-0 left-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="absolute top-0 left-0 w-72 h-72 bg-primary/10 rounded-full blur-[120px] animate-pulse"></div>
-
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-300/20 rounded-full blur-[150px] animate-pulse"></div>
-
-      <div className="max-w-7xl mx-auto px-5 lg:px-8">
-        {/* Heading */}
-
-        <div className="text-center max-w-4xl mx-auto mb-20" data-aos="fade-up">
-          <span className="inline-flex items-center px-5 py-2 rounded-full bg-primary/10 text-primary font-semibold">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
+        
+        {/* Section Header */}
+        <motion.div
+          className="text-center max-w-3xl mx-auto mb-16 lg:mb-20"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+          variants={headerVariants}
+        >
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100/80 text-emerald-800 font-semibold text-xs sm:text-sm border border-emerald-300/40">
+            <span className="w-2 h-2 rounded-full bg-emerald-600" />
             About Dr. Mahbubur Rahman Liton
           </span>
 
-          <h2 className="mt-6 text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
-            Leadership Rooted in
-            <span className="text-primary block mt-2">
-              Service, Education & Public Trust
+          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight tracking-tight">
+            Leadership Rooted in{" "}
+            <span className="text-emerald-700 block sm:inline">
+              Service, Education & Trust
             </span>
           </h2>
 
-          <p className="mt-6 text-lg text-slate-600 leading-8">
-            Discover the inspiring journey of Dr. Mahbubur Rahman Liton—
-            physician, educator, political leader, and dedicated public servant
-            committed to building a healthier, stronger, and more prosperous
-            Bangladesh.
+          <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-600 leading-relaxed">
+            Discover the inspiring journey of Dr. Mahbubur Rahman Liton—physician,
+            educator, political leader, and dedicated public servant committed to
+            building a healthier and stronger Bangladesh.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Main Grid */}
-
-        <div className="grid lg:grid-cols-12 gap-16 items-start">
-          {/* Left */}
-
-         <div
-  className="lg:col-span-5 sticky top-28"
-  data-aos="fade-right"
->
-  <div className="relative">
-    {/* Profile Image */}
-    <div className="relative overflow-hidden rounded-[35px] shadow-2xl">
-      <img
-        src={profile}
-        alt="Dr. Mahbubur Rahman Liton"
-        className="w-full object-cover duration-700 hover:scale-105"
-      />
-
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent"></div>
-    </div>
-
-    {/* Left Floating Badge */}
-    <div className="absolute -bottom-8 left-6 md:left-8 bg-white rounded-3xl shadow-xl border border-slate-100 backdrop-blur-md px-6 md:px-8 py-5 flex items-center">
-      <div>
-        <h3 className="text-3xl md:text-4xl font-bold text-primary">MBBS</h3>
-        <p className="text-sm md:text-base text-slate-600 font-medium">
-             Dhaka Medical College
-        </p>
-      </div>
-    </div>
-
-    {/* Right Floating Badge */}
-    
-  </div>
-
-  {/* Achievement Cards */}
-  <div className="grid grid-cols-2 gap-5 mt-20">
-    <div className="bg-white rounded-2xl shadow-lg p-6 text-center hover:-translate-y-2 duration-300">
-      <h3 className="text-3xl font-bold text-primary">MSc</h3>
-      <p className="text-sm text-slate-600 mt-2">
-        University of London
-      </p>
-    </div>
-
-    <div className="bg-white rounded-2xl shadow-lg p-6 text-center hover:-translate-y-2 duration-300">
-      <h3 className="text-3xl font-bold text-primary">Director</h3>
-      <p className="text-sm text-slate-600 mt-2">
-        State University Of Bangladesh
-      </p>
-    </div>
-  </div>
-</div>
-
-          {/* RIGHT SIDE STARTS HERE */}
-          {/* Continue in Part 2 */}
-
-          <div className="lg:col-span-7">
-            {/* Timeline */}
-
+        {/* Main 2-Column Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          {/* LEFT SIDE: Sticky Profile Column */}
+          <motion.div
+            className="lg:col-span-5 lg:sticky lg:top-28"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+            variants={leftColVariants}
+          >
             <div className="relative">
-              {/* Vertical Line */}
+              {/* Profile Image Frame */}
+              <div className="relative overflow-hidden rounded-3xl shadow-2xl border border-slate-200/80 bg-white group">
+                <img
+                  src={profile}
+                  alt="Dr. Mahbubur Rahman Liton"
+                  className="w-full h-[400px] sm:h-[480px] lg:h-[520px] object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent" />
+              </div>
 
-              <div className="absolute left-6 top-5 bottom-5 w-[3px] bg-gradient-to-b from-primary via-primary/40 to-transparent"></div>
+              {/* Floating Primary Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="absolute -bottom-6 left-4 sm:left-6 bg-white/90 backdrop-blur-md rounded-2xl shadow-xl border border-white/60 px-6 py-4 flex items-center gap-4 z-20"
+              >
+                <div className="w-12 h-12 rounded-xl bg-emerald-600/10 text-emerald-700 flex items-center justify-center text-2xl font-bold">
+                  <FaUserGraduate />
+                </div>
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 leading-none">
+                    MBBS
+                  </h3>
+                  <p className="text-xs sm:text-sm font-medium text-slate-600 mt-1">
+                    Dhaka Medical College
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Sub-Stat Cards */}
+            <div className="grid grid-cols-2 gap-4 mt-12 sm:mt-14">
+              <div className="bg-white rounded-2xl shadow-md border border-slate-200/70 p-5 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-emerald-700">
+                  MSc
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 font-medium mt-1">
+                  University of London
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl shadow-md border border-slate-200/70 p-5 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-emerald-700">
+                  Director
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 font-medium mt-1">
+                  State University of BD
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* RIGHT SIDE: Interactive Timeline */}
+          <motion.div
+            className="lg:col-span-7"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.15 }}
+            variants={timelineContainerVariants}
+          >
+            <div className="relative">
+              {/* Continuous Vertical Timeline Accent Line */}
+              <div className="absolute left-6 top-6 bottom-6 w-0.5 bg-gradient-to-b from-emerald-600 via-emerald-400/40 to-transparent" />
 
               {timeline.map((item, index) => (
-                <div
+                <motion.div
                   key={item.id}
-                  data-aos="fade-left"
-                  data-aos-delay={index * 150}
-                  className="relative flex gap-6 mb-10 group"
+                  variants={timelineCardVariants}
+                  className="relative flex gap-5 sm:gap-6 mb-8 lg:mb-10 group"
                 >
-                  {/* Icon */}
-
+                  {/* Timeline Circle Icon */}
                   <div className="relative z-10 shrink-0">
-                    <div
-                      className="
-          w-12 h-12
-          rounded-full
-          bg-primary
-          text-white
-          flex
-          items-center
-          justify-center
-          text-xl
-          shadow-xl
-          transition-all
-          duration-500
-          group-hover:scale-110
-          group-hover:rotate-12
-        "
-                    >
+                    <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-xl shadow-lg shadow-emerald-900/20 transition-all duration-300 group-hover:scale-110 group-hover:bg-emerald-500">
                       {item.icon}
                     </div>
-
-                    <span
-                      className="
-          absolute
-          inset-0
-          rounded-full
-          border-4
-          border-primary/20
-          animate-ping
-        "
-                    ></span>
                   </div>
 
-                  {/* Content Card */}
-
-                  <div
-                    className="
-        flex-1
-        bg-white/80
-        backdrop-blur-xl
-        rounded-3xl
-        p-8
-        shadow-lg
-        border
-        border-slate-100
-        transition-all
-        duration-500
-        hover:-translate-y-2
-        hover:shadow-2xl
-        hover:border-primary/30
-      "
-                  >
-                    <span className="text-primary font-semibold uppercase tracking-widest text-xs">
+                  {/* Timeline Card */}
+                  <div className="flex-1 bg-white/90 backdrop-blur-md rounded-2xl p-6 sm:p-8 shadow-md border border-slate-200/80 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-emerald-300/60">
+                    <span className="text-emerald-700 font-bold uppercase tracking-widest text-xs">
                       Section {String(index + 1).padStart(2, "0")}
                     </span>
 
-                    <h3 className="text-2xl font-bold text-slate-900 mt-2 mb-4">
+                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mt-1 mb-3">
                       {item.title}
                     </h3>
 
-                    <p className="leading-8 text-slate-600">
+                    <p className="text-sm sm:text-base leading-relaxed text-slate-600">
                       {item.description}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
-
-              {/* Quote Card */}
-
-           
             </div>
-          </div>
+          </motion.div>
+
         </div>
       </div>
     </section>
