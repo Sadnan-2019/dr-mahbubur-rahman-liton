@@ -11,6 +11,9 @@ import MyWork from './components/MyWork/MyWork';
 import DevelopmentProjects from './components/DevelopmentProjects/DevelopmentProjects';
 import NewsUpdates from './components/Newsdata/Newsdata';
 import Gallery from './components/Gallery/Gallery';
+import CitizenServices from './components/CitizenServices/CitizenServices';
+import ContactSection from './components/ContactSection/ContactSection';
+import Footer from './components/Footer/Footer';
 function App() {
 
 
@@ -31,6 +34,9 @@ function App() {
        <DevelopmentProjects></DevelopmentProjects>
        <NewsUpdates></NewsUpdates>
        <Gallery></Gallery>
+       <CitizenServices></CitizenServices>
+       <ContactSection></ContactSection>
+       <Footer></Footer>
 
     </div>
   );
