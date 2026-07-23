@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect www to non-www
+    RewriteCond %{HTTP_HOST} ^www\.hcah\.mrg\.com\.bd$ [NC]
+    RewriteRule ^ https://hcah.mrg.com.bd%{REQUEST_URI} [R=301,L]
+
+    # Serve existing files/directories
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # React SPA fallback
+    RewriteRule ^ index.html [L]
+</IfModule>

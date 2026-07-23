@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa6";
 
 // Assets
-import parliament1 from "../../assets/landing1.jpg";
+import parliament1 from "../../assets/landing3.webp";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -73,14 +73,14 @@ const Parliament = () => {
       {/* Top Banner Box */}
       <motion.div
         variants={itemVariants}
-        className="relative rounded-3xl overflow-hidden shadow-2xl bg-slate-900 min-h-[380px] flex items-center"
+        className="relative rounded-3xl overflow-hidden   bg-slate-900 min-h-[380px] flex items-center"
       >
         <img
           src={parliament1}
           alt="Parliamentary Leadership"
           className="absolute inset-0 w-full h-full object-cover opacity-35"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-0 via-slate-950/80 to-transparent" />
 
         <div className="relative z-10 p-8 sm:p-12 max-w-2xl">
           <span className="inline-flex items-center gap-2 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-400/30 px-4 py-1.5 text-emerald-300 font-semibold text-xs sm:text-sm">

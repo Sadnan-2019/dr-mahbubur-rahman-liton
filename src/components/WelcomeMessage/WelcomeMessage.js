@@ -163,7 +163,7 @@ const WelcomeMessage = () => {
                   Dr. Mahbubur Rahman Liton
                 </h4>
                 <p className="text-emerald-700 font-semibold text-sm sm:text-base mt-0.5">
-                  Member of Parliament (Dhaka-11)
+                  Member of Parliament Mymensingh-7 (Trishal)
                 </p>
                 <p className="text-slate-500 text-xs sm:text-sm">
                   People's Republic of Bangladesh

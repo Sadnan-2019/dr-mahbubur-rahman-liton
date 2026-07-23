@@ -12,7 +12,7 @@ import {
   FaEnvelope,
 } from "react-icons/fa6"; // FA6 imports
 
-import constituencyImg from "../../assets/landing1.jpg";
+import constituencyImg from "../../assets/Roads1.webp";
 
 const containerVariants = {
   hidden: { opacity: 0 },

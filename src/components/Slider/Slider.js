@@ -11,9 +11,9 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
 // Demo Images
-import slide1 from "../../assets/landing1.jpg";
-import slide2 from "../../assets/landing2.jpg";
-import slide3 from "../../assets/landing2.jpg";
+import slide1 from "../../assets/2026.webp";
+import slide2 from "../../assets/lanading6.webp";
+import slide3 from "../../assets/landing4.webp";
 import "./Slider.css"; // 
 
 // Motion variants for smooth staggered entry
@@ -42,7 +42,7 @@ const Hero = () => {
     {
       id: 1,
       image: slide1,
-      subtitle: "Member of Parliament | Dhaka-11",
+      subtitle: "Member of Parliament | 152, Mymensingh 7 ( Trishal)",
       title: "Dr. Mahbubur Rahman Liton",
       description:
         "Dedicated to public service, sustainable development, and improving quality of life through transparency, leadership, and community engagement.",
@@ -78,7 +78,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative w-full overflow-hidden bg-slate-950 group">
+    <section className="relative w-full overflow-hidden bg-slate-200 group">
       {/* Custom Swiper Controls */}
       <button className="custom-prev absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/30 hover:bg-emerald-600 text-white backdrop-blur-md border border-white/20 flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 hidden md:flex">
         <ChevronLeft className="w-6 h-6" />

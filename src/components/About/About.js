@@ -53,32 +53,55 @@ const About = () => {
     {
       id: 1,
       icon: <MdOutlineHealthAndSafety />,
-      title: "Biography",
+      title: "Biography & Roots",
       description:
-        "Dr. Mahbubur Rahman Liton was born into a respected family in Kanthal Union, Trishal. His father, Alhaj Md. Habibur Rahman, is an agriculturist, while his late mother, Farida Akhter, was a renowned teacher. He believes public service begins with honesty, compassion, and accountability.",
+        " Born into a respected family in Kanthal Union, Trishal, Dr. Mahbubur Rahman Liton’s foundational values were shaped by his parents—his father, Alhaj Md. Habibur Rahman, an agriculturist deeply tied to the soil, and his late mother, Farida Akhter, a revered educator. Grounded in this legacy of agriculture and education, Dr. Liton’s approach to governance is simple: public service must be driven by uncompromising honesty, empathy, and absolute accountability",
     },
     {
       id: 2,
       icon: <FaUserGraduate />,
-      title: "Education",
+      title: "Educational Excellence ",
       description:
-        "He studied at Dhaka Shaheen School and Notre Dame College before earning his MBBS from Dhaka Medical College. Later, he completed his MSc from the University of London, strengthening both his medical expertise and leadership vision.",
+        "Dr. Mahbubur Rahman Liton’s academic journey reflects a lifelong pursuit of excellence and rigorous training. After completing his early education at DhakaShaheen School and Notre Dame College, he earned his MBBS from the prestigious Dhaka Medical College.To expand his strategic vision on global healthcare and institutional development,he pursued his MSc at the University of London. This rare synthesis of medical science, global education, and political wisdom defines his evidence-based approach to policy and governance.",
     },
     {
       id: 3,
       icon: <FaBriefcase />,
-      title: "Professional Journey",
+      title: "Professional & Political Leadership",
       description:
-        "Currently serving as Director of the State University of Bangladesh and Labaid Group, he has also held important leadership positions in student politics, healthcare organizations, and national political platforms.",
-    },
-    {
-      id: 4,
-      icon: <FaBullseye />,
-      title: "Vision & Values",
-      description:
-        "To create a healthier, educated, transparent, and prosperous Bangladesh where every citizen has equal opportunities through sustainable development and responsible leadership.",
+        " Beyond his medical background, Dr. Mahbubur Rahman Liton has established himself as an institutional builder and parliamentary leader. Currently serving as aDirector at the State University of Bangladesh and Labaid Group, he bridges higher education with healthcare infrastructure. As a sitting Member of Parliament (Mymensingh-7), he actively serves as the Convenor of the Bangladesh Institute of Parliamentary Studies (BIPS) and Co-Chairman of the US Caucus. His leadership spans decades—from student politics to national healthcare advocacy and diplomatic affairs.",
     },
   ];
+
+  const visionData = {
+    id: 4,
+    icon: <FaBullseye />,
+    title: "Vision & Core Pillars",
+    subtitle:
+      "Dr. Liton’s mission centers on transforming Trishal into a modern, self-sustaining economic and cultural powerhouse through transparent, youth-driven leadership.",
+    bullets: [
+      {
+        id: 1,
+        title: "Sovereign Governance & Accountability",
+        desc: "Zero tolerance for corruption, strict project deadlines, and transparent public administration.",
+      },
+      {
+        id: 2,
+        title: "Youth Empowerment & ITES Skills",
+        desc: "Creating direct pathways to global technology jobs through initiatives like the Trishal IT/ITES Hub, High-Tech Park, and TTC.",
+      },
+      {
+        id: 3,
+        title: "Healthcare & Social Safety",
+        desc: "Leveraging his medical background to ensure accessible, specialized healthcare and humanitarian support for every citizen.",
+      },
+      {
+        id: 4,
+        title: "Global Heritage & Identity",
+        desc: "Positioning Trishal on the world map through the 'Nazrul City' Strategic Framework and global digital archives.",
+      },
+    ],
+  };
 
   return (
     <section className="relative overflow-hidden py-16 sm:py-20 lg:py-28 bg-slate-50">
@@ -118,9 +141,9 @@ const About = () => {
         {/* Main 2-Column Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* LEFT SIDE: Sticky Profile Column */}
+          {/* LEFT SIDE: Profile Column + Vision Section */}
           <motion.div
-            className="lg:col-span-5 lg:sticky lg:top-28"
+            className="lg:col-span-5"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
@@ -179,9 +202,47 @@ const About = () => {
                 </p>
               </div>
             </div>
+
+            {/* Vision & Core Pillars Section (Placed directly below MSc / Director cards) */}
+            <div className="mt-8 bg-white/90 backdrop-blur-md rounded-2xl p-6 sm:p-8 shadow-md border border-slate-200/80 transition-all duration-300 hover:shadow-xl hover:border-emerald-300/60">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-lg shadow-md shadow-emerald-900/20">
+                  {visionData.icon}
+                </div>
+                <div>
+                  <span className="text-emerald-700 font-bold uppercase tracking-widest text-xs block">
+                    Section 04
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
+                    {visionData.title}
+                  </h3>
+                </div>
+              </div>
+
+              <p className="text-xs sm:text-sm leading-relaxed text-slate-600 mb-4">
+                {visionData.subtitle}
+              </p>
+
+              <ul className="space-y-3 pt-1">
+                {visionData.bullets.map((bullet) => (
+                  <li
+                    key={bullet.id}
+                    className="flex items-start gap-3 text-xs sm:text-sm text-slate-700"
+                  >
+                    <span className="inline-block w-2 h-2 rounded-full bg-slate-900 mt-1.5 shrink-0" />
+                    <p className="leading-relaxed">
+                      <span className="font-bold text-slate-900">
+                        {bullet.id}. {bullet.title}:{" "}
+                      </span>
+                      <span className="text-slate-600">{bullet.desc}</span>
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </motion.div>
 
-          {/* RIGHT SIDE: Interactive Timeline */}
+          {/* RIGHT SIDE: Timeline (Sections 01 - 03) */}
           <motion.div
             className="lg:col-span-7"
             initial="hidden"
