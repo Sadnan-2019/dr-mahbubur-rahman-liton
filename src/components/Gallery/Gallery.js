@@ -12,6 +12,10 @@ import {
   FaArrowRight,
 } from "react-icons/fa6";
 
+
+ 
+
+ 
 // Gallery Items tailored for a Bangladeshi MP
 const galleryItems = [
   {
@@ -22,7 +26,7 @@ const galleryItems = [
     date: "July 12, 2026",
     location: "Jatiya Sangsad Bhaban, Dhaka",
     image:
-      "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1200&q=80",
+      "https://i.ibb.co.com/23HpXmKS/Dev-work1.webp",
     caption:
       "Addressing the National Parliament during the budget discussion session to demand allocations for riverbank protection in rural unions.",
   },
@@ -34,7 +38,7 @@ const galleryItems = [
     date: "June 25, 2026",
     location: "Central Upazila Junction",
     image:
-      "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b2?auto=format&fit=crop&w=1200&q=80",
+      "https://i.ibb.co.com/6J0B1TPv/landing4.webp",
     caption:
       "Laying the foundation stone and inspecting the ongoing 14 km asphalt road development project for better local connectivity.",
   },
@@ -46,7 +50,7 @@ const galleryItems = [
     date: "June 18, 2026",
     location: "Union Parishad Auditorium",
     image:
-      "https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1200&q=80",
+      "https://i.ibb.co.com/LWPRCKt/landing2.webp",
     caption:
       "Direct listening session with local ward members and residents to address local utility and public healthcare complaints.",
   },
@@ -58,7 +62,7 @@ const galleryItems = [
     date: "May 30, 2026",
     location: "Agricultural Growth Center",
     image:
-      "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80",
+      "https://i.ibb.co.com/6c8G2m2L/treeplantation.jpg",
     caption:
       "Handing over subsidized high-yield seeds, fertilizers, and solar pump accessories to 500+ small-scale Boro farmers.",
   },
@@ -70,7 +74,7 @@ const galleryItems = [
     date: "May 14, 2026",
     location: "Model Girls High School",
     image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+      "https://i.ibb.co.com/vCW8ky4b/US-CAUCUS.jpg",
     caption:
       "Unveiling the new digital classroom lab equipped with high-speed internet and modern computers for female students.",
   },
@@ -82,7 +86,7 @@ const galleryItems = [
     date: "April 28, 2026",
     location: "District Stadium Ground",
     image:
-      "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=80",
+      "https://i.ibb.co.com/q3H0qG2B/sports.jpg",
     caption:
       "Awarding trophies and sports kits to winning union teams at the annual Inter-Union Football Championship final.",
   },

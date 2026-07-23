@@ -13,7 +13,7 @@ import "swiper/css/effect-fade";
 // Demo Images
 import slide1 from "../../assets/2026.webp";
 import slide2 from "../../assets/lanading6.webp";
-import slide3 from "../../assets/landing4.webp";
+import slide3 from "../../assets/NDC.webp";
 import "./Slider.css"; // 
 
 // Motion variants for smooth staggered entry

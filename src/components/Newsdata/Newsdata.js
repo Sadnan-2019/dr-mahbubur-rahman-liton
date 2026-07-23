@@ -22,7 +22,7 @@ const newsData = [
     readTime: "4 min read",
     isFeatured: true,
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzAtka6v2fBaqICaNSpl2UHSKbqN-43goXwzwKkFZzCZaMcY9HsVTTeqA&s=10",
+      "https://i.ibb.co.com/sp3B2L4f/Roads1.jpg",
     summary:
       "Honorable MP inspected and inaugurated the new 14 km paved highway connecting major union growth centers, significantly reducing travel time for local farmers and commuters.",
     content:
@@ -36,7 +36,7 @@ const newsData = [
     readTime: "3 min read",
     isFeatured: false,
     image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
+      "https://i.ibb.co.com/gbq9g0Lk/free-medical.jpg",
     summary:
       "A day-long health camp organized at the Central College ground provided free specialist doctor consultations, eye tests, and essential medicines.",
     content:
@@ -50,7 +50,7 @@ const newsData = [
     readTime: "5 min read",
     isFeatured: false,
     image:
-      "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80",
+      "https://i.ibb.co.com/1Y8prcXM/landing3.jpg",
     summary:
       "Delivered a decisive speech during the national budget session demanding urgent budget allocations for permanent flood defense embankments.",
     content:
@@ -64,7 +64,7 @@ const newsData = [
     readTime: "3 min read",
     isFeatured: false,
     image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
+      "https://i.ibb.co.com/NDVLyBh/schools.jpg",
     summary:
       "Equipped local high schools with high-speed internet, interactive smartboards, and 20 modern computers per lab under the Digital Bangladesh initiative.",
     content:
