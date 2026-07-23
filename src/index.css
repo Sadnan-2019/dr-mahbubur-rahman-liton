@@ -29,3 +29,19 @@ code {
   border-radius: 9999px;
   background: #2563eb; /* Replace with your primary color if different */
 }
+
+/* Hide Google Translate top banner & tooltip popups */
+.goog-te-banner-frame,
+.skiptranslate,
+#goog-gt-tt {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
+/* Prevent Google from trying to translate the button text itself */
+.notranslate {
+  translate: no;
+}

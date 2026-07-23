@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import {
   FaBuildingColumns,
@@ -10,17 +10,29 @@ import {
   FaLanguage,
 } from "react-icons/fa6";
 
-const Navbar = () => {
+const Navbar = ({ onLanguageChange }) => {
   const [open, setOpen] = useState(false);
-  
-  // Track specifically WHICH menu item is open (stores item name string or null)
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [activeMobileDropdown, setActiveMobileDropdown] = useState(null);
-  
-  const [lang, setLang] = useState("EN");
+
+  // Initialize language from google cookie if available
+  const getInitialLanguage = () => {
+    const match = document.cookie.match(/googtrans=\/en\/(en|bn)/);
+    return match ? match[1] : 'en';
+  };
+
+  const [currentLang, setCurrentLang] = useState(getInitialLanguage);
+
+  useEffect(() => {
+    setCurrentLang(getInitialLanguage());
+  }, []);
 
   const toggleLanguage = () => {
-    setLang((prev) => (prev === "EN" ? "BN" : "EN"));
+    const newLang = currentLang === 'en' ? 'bn' : 'en';
+    setCurrentLang(newLang);
+    if (onLanguageChange) {
+      onLanguageChange(newLang);
+    }
   };
 
   const navLinkClass = ({ isActive }) =>
@@ -74,10 +86,10 @@ const Navbar = () => {
 
           <button
             onClick={toggleLanguage}
-            className="flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-slate-800 hover:bg-emerald-900 text-slate-200 hover:text-emerald-300 transition-colors border border-slate-700"
+            className="notranslate bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-colors border border-emerald-500 flex items-center gap-1.5"
           >
-            <FaLanguage className="text-sm text-emerald-400" />
-            <span className="font-bold">{lang === "EN" ? "বাংলা" : "English"}</span>
+            <FaLanguage className="text-sm" />
+            <span>{currentLang === 'en' ? 'বাংলা' : 'English'}</span>
           </button>
         </div>
       </div>
@@ -122,7 +134,7 @@ const Navbar = () => {
                     />
                   </button>
 
-                  {/* Individual Dropdown Menu */}
+                  {/* Dropdown Menu */}
                   <div
                     className={`absolute left-0 top-full -mt-2 w-64 rounded-2xl bg-white shadow-2xl border border-slate-100 overflow-hidden transition-all duration-200 ${
                       isDropdownOpen
