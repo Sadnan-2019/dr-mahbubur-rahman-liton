@@ -11,92 +11,107 @@ import {
   FaCompass,
   FaArrowRight,
 } from "react-icons/fa6";
-import { FaCheckCircle } from "react-icons/fa"; // Imported from /fa instead of /fa6
+import { FaCheckCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
-// Project Data for all 6 Sub-sections
+
+// Project Data with image URLs added for all items
 const projectsData = [
   // 1. Education
   {
     id: 1,
     category: "education",
     categoryLabel: "Education",
-    title: "ICT Lab & Digital Classroom Setup",
-    location: "Upazila Model High Schools",
-    status: "Completed",
+    title: "Smart Education and Skilled Human Resource Development",
+    location: "Trishal",
+    status: "In Progress",
+    image:
+      "https://i.ibb.co.com/NDVLyBh/schools.jpg",
     description:
-      "Equipped 15 local secondary schools with modern computer labs, high-speed internet, and multimedia classrooms to promote digital literacy.",
+      "The first requirement for building a modern, merit-based society is to create opportunities for up-to-date technical and higher education alongside traditional education. Our main goal is to coordinate local educational institutions with Jatiya Kabi Kazi Nazrul Islam University and ensure international-standard training.",
     impact: "12,000+ Students Benefited",
   },
-  {
-    id: 2,
-    category: "education",
-    categoryLabel: "Education",
-    title: "Girls' Higher Education Scholarship",
-    location: "Constituency-wide",
-    status: "In Progress",
-    description:
-      "Providing annual financial stipends and learning materials to meritorious female students from low-income families.",
-    impact: "1,500 Scholars Supported",
-  },
+  // {
+  //   id: 2,
+  //   category: "education",
+  //   categoryLabel: "Education",
+  //   title: "Girls' Higher Education Scholarship",
+  //   location: "Constituency-wide",
+  //   status: "In Progress",
+  //   image:
+  //     "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80",
+  //   description:
+  //     "Providing annual financial stipends and learning materials to meritorious female students from low-income families to ensure equal access to higher education and mitigate dropout rates.",
+  //   impact: "1,500 Scholars Supported",
+  // },
 
   // 2. Healthcare
   {
     id: 3,
     category: "healthcare",
     categoryLabel: "Healthcare",
-    title: "Upazila Health Complex Modernization",
+    title: "Affordable and Modern Medical Care for All",
     location: "Central Upazila Hospital",
     status: "Completed",
+    image:
+      "https://i.ibb.co.com/k6Jq9WBH/Dev-work2.webp",
     description:
-      "Installed new emergency oxygen supply systems, modern pathology equipment, and doubled bed capacity for maternity wards.",
+      "As a physician, I believe healthcare is not a privilege—it is a fundamental human right. By combining professional experience with national policy-making, we are working tirelessly to bring modern medical care to the doorstep of Trishal's marginalized people.",
     impact: "500+ Daily Patients Served",
   },
-  {
-    id: 4,
-    category: "healthcare",
-    categoryLabel: "Healthcare",
-    title: "Union Mobile Health Clinics",
-    location: "Remote Riverine Unions",
-    status: "In Progress",
-    description:
-      "Deploying weekly mobile medical units with qualified doctors and free basic medications to underserved rural areas.",
-    impact: "8 Unions Covered",
-  },
+  // {
+  //   id: 4,
+  //   category: "healthcare",
+  //   categoryLabel: "Healthcare",
+  //   title: "Union Mobile Health Clinics",
+  //   location: "Remote Riverine Unions",
+  //   status: "In Progress",
+  //   image:
+  //     "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80",
+  //   description:
+  //     "Deploying weekly mobile medical units with qualified doctors and free basic medications to underserved rural areas, bringing essential healthcare directly to doorstep communities.",
+  //   impact: "8 Unions Covered",
+  // },
 
   // 3. Infrastructure
   {
     id: 5,
     category: "infrastructure",
     categoryLabel: "Infrastructure",
-    title: "Rural Connectivity Road Paving",
+    title: "Sustainable Infrastructure and a Modern Communication Hub",
     location: "Union Connecting Roads",
     status: "In Progress",
+    image:
+      "https://i.ibb.co.com/V41QfDF/communication.jpg",
     description:
-      "Upgrading 42 kilometers of mud roads into all-weather paved roads to facilitate smooth transportation for goods and commuters.",
+      " Sustainable infrastructure is the key driver of the regional economy. Trishal is being developed into Mymensingh's main economic corridor through 100% transparency in work and completion of contract work within fixed timelines.",
     impact: "42 km Paved",
   },
-  {
-    id: 6,
-    category: "infrastructure",
-    categoryLabel: "Infrastructure",
-    title: "Solar Street Light Installation",
-    location: "Key Growth Centers & Bazaars",
-    status: "Completed",
-    description:
-      "Installed eco-friendly solar streetlights across public markets, intersection roads, and village centers to enhance evening safety.",
-    impact: "650+ Solar Lights Live",
-  },
+  // {
+  //   id: 6,
+  //   category: "infrastructure",
+  //   categoryLabel: "Infrastructure",
+  //   title: "Solar Street Light Installation",
+  //   location: "Key Growth Centers & Bazaars",
+  //   status: "Completed",
+  //   image:
+  //     "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=80",
+  //   description:
+  //     "Installed eco-friendly solar streetlights across public markets, intersection roads, and village centers to enhance evening safety and promote renewable energy adoption.",
+  //   impact: "650+ Solar Lights Live",
+  // },
 
   // 4. Agriculture
   {
     id: 7,
     category: "agriculture",
     categoryLabel: "Agriculture",
-    title: "Solar-Powered Irrigation Canal System",
+    title: "Protecting Farmers' Rights and Modern Agricultural Technology",
     location: "Agricultural Blocks",
     status: "Completed",
+    image:
+      "https://i.ibb.co.com/23HpXmKS/Dev-work1.webp",
     description:
-      "Re-excavated local canals and introduced subsidized solar irrigation pumps to reduce farming costs during the Boro season.",
+      " Honoring the sweat and labor of farmers is our moral responsibility in the politics of soil and people. Steps have been taken, in coordination with Bangladesh Agricultural University and the local agriculture department, to make Trishal's agriculture technology-based and profitable.",
     impact: "3,200 Farmers Empowered",
   },
 
@@ -105,11 +120,13 @@ const projectsData = [
     id: 8,
     category: "youth",
     categoryLabel: "Youth",
-    title: "Youth Technical Training Center",
+    title: "Youth Empowerment and a Global ITES Hub",
     location: "District Technical Hub",
     status: "In Progress",
+    image:
+      "https://i.ibb.co.com/q3H0qG2B/sports.jpg",
     description:
-      "Offering certified courses in electrical work, IT support, motor mechanics, and digital marketing to curb youth unemployment.",
+      " Transforming young people into skilled human resources is far more sustainable than temporary road development. Our goal is to make Trishal's educated and semi-educated youth suitable for both domestic and international labor markets.",
     impact: "800+ Youth Enrolled",
   },
 
@@ -118,11 +135,13 @@ const projectsData = [
     id: 9,
     category: "social",
     categoryLabel: "Social Development",
-    title: "Safety Net Allowance Expansion",
+    title: "An Inclusive Society and Accountable Governance",
     location: "All Ward Communities",
     status: "Completed",
+    image:
+      "https://i.ibb.co.com/S70hxtcm/Socail.jpg",
     description:
-      "Ensured transparent, direct digital disbursement of old-age, widow, and disability allowances to local beneficiaries without intermediaries.",
+      "The true joy of public service lies in breaking down the walls of protocol and formality to share in the joys and sorrows of ordinary people. Our resolve is to build a drug-free, crime-free Trishal that is safe for the elderly and for women.",
     impact: "10,000+ Families Covered",
   },
 ];
@@ -178,7 +197,7 @@ const DevelopmentProjects = () => {
           </p>
         </motion.div>
 
-        {/* Filter Bar (Horizontal Pill Tabs) */}
+        {/* Filter Bar */}
         <div className="mt-10 sm:mt-12 flex justify-center">
           <div className="flex flex-wrap justify-center items-center bg-slate-100/80 p-2 rounded-2xl gap-2 border border-slate-200/60 max-w-5xl">
             {categories.map((cat) => {
@@ -215,7 +234,7 @@ const DevelopmentProjects = () => {
         {/* Dynamic Project Cards Grid */}
         <motion.div
           layout
-          className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch"
         >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
@@ -226,63 +245,79 @@ const DevelopmentProjects = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.35 }}
-                className="bg-slate-50/70 border border-slate-200/80 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:bg-white hover:shadow-xl hover:border-emerald-300 transition-all duration-300 group"
+                className="bg-white border border-slate-200/80 rounded-3xl overflow-hidden flex flex-col justify-between hover:shadow-2xl hover:border-emerald-300 transition-all duration-300 group"
               >
                 <div>
-                  {/* Category & Status Header */}
-                  <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="text-xs font-bold text-emerald-800 bg-emerald-100/80 px-3 py-1 rounded-full border border-emerald-300/40">
-                      {project.categoryLabel}
-                    </span>
+                  {/* Card Header Image Frame */}
+                  <div className="relative w-full h-52 overflow-hidden bg-slate-100">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
 
-                    <span
-                      className={`inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-full ${
-                        project.status === "Completed"
-                          ? "bg-emerald-600/10 text-emerald-700"
-                          : "bg-amber-500/10 text-amber-700"
-                      }`}
-                    >
-                      {project.status === "Completed" ? (
-                        <FaCheckCircle className="text-xs" />
-                      ) : (
-                        <FaClock className="text-xs" />
-                      )}
-                      {project.status}
-                    </span>
+                    {/* Floating Badges over Image */}
+                    <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2">
+                      <span className="text-xs font-bold text-white bg-slate-900/70 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 shadow-sm">
+                        {project.categoryLabel}
+                      </span>
+
+                      <span
+                        className={`inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1 rounded-full backdrop-blur-md shadow-sm ${
+                          project.status === "Completed"
+                            ? "bg-emerald-500/90 text-white"
+                            : "bg-amber-500/90 text-white"
+                        }`}
+                      >
+                        {project.status === "Completed" ? (
+                          <FaCheckCircle className="text-xs" />
+                        ) : (
+                          <FaClock className="text-xs" />
+                        )}
+                        {project.status}
+                      </span>
+                    </div>
+
+                    {/* Location overlay tag */}
+                    <div className="absolute bottom-3 left-4 text-xs font-medium text-white/90 flex items-center gap-1">
+                      <span>📍</span> {project.location}
+                    </div>
                   </div>
 
-                  {/* Title & Location */}
-                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-xs font-semibold text-slate-500 mt-1">
-                    📍 {project.location}
-                  </p>
+                  {/* Card Content Body */}
+                  <div className="p-6 sm:p-7">
+                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-emerald-700 transition-colors leading-snug">
+                      {project.title}
+                    </h3>
 
-                  {/* Description */}
-                  <p className="mt-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    {project.description}
-                  </p>
+                    {/* Complete Untruncated Description */}
+                    <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                      {project.description}
+                    </p>
+                  </div>
                 </div>
 
-                {/* Footer Impact Badge */}
-                <Link
-                  to={`/projects/${project.id}`}
-                  className="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between group/link"
-                >
-                  <div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
-                      Targeted Impact
-                    </span>
-                    <span className="text-xs sm:text-sm font-bold text-slate-800 group-hover/link:text-emerald-700 transition-colors">
-                      {project.impact}
-                    </span>
-                  </div>
+                {/* Footer Impact Link */}
+                <div className="px-6 sm:px-7 pb-6 pt-2">
+                  <Link
+                    to={`/projects/${project.id}`}
+                    className="pt-4 border-t border-slate-100 flex items-center justify-between group/link"
+                  >
+                    <div>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
+                        Targeted Impact
+                      </span>
+                      <span className="text-xs sm:text-sm font-bold text-slate-800 group-hover/link:text-emerald-700 transition-colors">
+                        {project.impact}
+                      </span>
+                    </div>
 
-                  <div className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center group-hover/link:bg-emerald-700 group-hover/link:text-white transition-all duration-300">
-                    <FaArrowRight className="text-xs transition-transform duration-300 group-hover/link:translate-x-0.5" />
-                  </div>
-                </Link>
+                    <div className="w-9 h-9 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center group-hover/link:bg-emerald-700 group-hover/link:text-white transition-all duration-300 shadow-sm">
+                      <FaArrowRight className="text-xs transition-transform duration-300 group-hover/link:translate-x-0.5" />
+                    </div>
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </AnimatePresence>

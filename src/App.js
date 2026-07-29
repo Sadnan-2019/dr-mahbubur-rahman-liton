@@ -112,7 +112,7 @@ const changeLanguage = (langCode) => {
       <DevelopmentProjects />
       <NewsUpdates />
       <Gallery />
-      <CitizenServices />
+      {/* <CitizenServices /> */}
       <ContactSection />
       <Footer />
     </div>

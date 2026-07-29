@@ -173,7 +173,7 @@ const Navbar = ({ onLanguageChange }) => {
         </nav>
 
         {/* CTA Button */}
-        <div className="hidden lg:flex items-center gap-3">
+        {/* <div className="hidden lg:flex items-center gap-3">
           <Link
             to="/services/do-letter"
             className="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs px-5 py-3 rounded-xl transition-all shadow-md shadow-emerald-900/20"
@@ -181,7 +181,7 @@ const Navbar = ({ onLanguageChange }) => {
             <FaFileSignature />
             <span>Apply for DO Letter</span>
           </Link>
-        </div>
+        </div> */}
 
         {/* Mobile Menu Button */}
         <div className="lg:hidden flex items-center gap-2">
