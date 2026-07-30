@@ -51,7 +51,7 @@ const projectsData = [
     categoryLabel: "Healthcare",
     title: "Affordable and Modern Medical Care for All",
     location: "Central Upazila Hospital",
-    status: "Completed",
+    status: "In Progress",
     image:
       "https://i.ibb.co.com/k6Jq9WBH/Dev-work2.webp",
     description:
@@ -107,7 +107,7 @@ const projectsData = [
     categoryLabel: "Agriculture",
     title: "Protecting Farmers' Rights and Modern Agricultural Technology",
     location: "Agricultural Blocks",
-    status: "Completed",
+    status: "In Progress",
     image:
       "https://i.ibb.co.com/23HpXmKS/Dev-work1.webp",
     description:
@@ -120,13 +120,13 @@ const projectsData = [
     id: 8,
     category: "youth",
     categoryLabel: "Youth",
-    title: "Youth Empowerment and a Global ITES Hub",
+    title: "MP Dr. Mahabubur Rahman Liton Pledges Support for Sports and Youth Development in Trishal",
     location: "District Technical Hub",
     status: "In Progress",
     image:
       "https://i.ibb.co.com/q3H0qG2B/sports.jpg",
     description:
-      " Transforming young people into skilled human resources is far more sustainable than temporary road development. Our goal is to make Trishal's educated and semi-educated youth suitable for both domestic and international labor markets.",
+      "  To encourage health, sportsmanship, and leadership among the younger generation, Dr. Md. Mahabubur Rahman Liton, Honorable Member of Parliament for Mymensingh-7 (Trishal), attended the grand final of a local primary school football tournament as the chief guest.",
     impact: "800+ Youth Enrolled",
   },
 
@@ -137,11 +137,11 @@ const projectsData = [
     categoryLabel: "Social Development",
     title: "An Inclusive Society and Accountable Governance",
     location: "All Ward Communities",
-    status: "Completed",
+    status: "In Progress",
     image:
       "https://i.ibb.co.com/S70hxtcm/Socail.jpg",
     description:
-      "The true joy of public service lies in breaking down the walls of protocol and formality to share in the joys and sorrows of ordinary people. Our resolve is to build a drug-free, crime-free Trishal that is safe for the elderly and for women.",
+      "As part of the national social safety net initiative, the official distribution of Family Cards was held in Trishal to support local low-income families. Dr. Md. Mahabubur Rahman Liton, Honorable Member of Parliament for Mymensingh-7 (Trishal), attended as the chief guest and distributed the smart cards directly to women heads of households. Speaking at the event, Dr. Liton emphasized that true social development begins at the family level. He noted that the initiative aims to provide direct financial assistance and food security to vulnerable households without any middleman involvement.",
     impact: "10,000+ Families Covered",
   },
 ];
@@ -280,9 +280,7 @@ const DevelopmentProjects = () => {
                     </div>
 
                     {/* Location overlay tag */}
-                    <div className="absolute bottom-3 left-4 text-xs font-medium text-white/90 flex items-center gap-1">
-                      <span>📍</span> {project.location}
-                    </div>
+                     
                   </div>
 
                   {/* Card Content Body */}
@@ -304,14 +302,14 @@ const DevelopmentProjects = () => {
                     to={`/projects/${project.id}`}
                     className="pt-4 border-t border-slate-100 flex items-center justify-between group/link"
                   >
-                    <div>
+                    {/* <div>
                       <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
                         Targeted Impact
                       </span>
                       <span className="text-xs sm:text-sm font-bold text-slate-800 group-hover/link:text-emerald-700 transition-colors">
                         {project.impact}
                       </span>
-                    </div>
+                    </div> */}
 
                     <div className="w-9 h-9 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center group-hover/link:bg-emerald-700 group-hover/link:text-white transition-all duration-300 shadow-sm">
                       <FaArrowRight className="text-xs transition-transform duration-300 group-hover/link:translate-x-0.5" />

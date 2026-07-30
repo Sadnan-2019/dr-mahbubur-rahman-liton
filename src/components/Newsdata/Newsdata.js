@@ -16,59 +16,55 @@ import {
 const newsData = [
   {
     id: 1,
-    title: "New 4-Lane Upazila Connecting Highway Inauguration Ceremony",
+    title: "Road Paving Work Inaugurated on Kazishimla GPS Road in Trishal",
     category: "Infrastructure",
     date: "July 18, 2026",
     readTime: "4 min read",
     isFeatured: true,
-    image:
-      "https://i.ibb.co.com/sp3B2L4f/Roads1.jpg",
+    image: "https://i.ibb.co.com/sp3B2L4f/Roads1.jpg",
     summary:
-      "Honorable MP inspected and inaugurated the new 14 km paved highway connecting major union growth centers, significantly reducing travel time for local farmers and commuters.",
+      "The paving work for the Kazishimala-Kazishimla GPS Road has been officially inaugurated in Trishal, Mymensingh.Implemented by the Local Government Engineering Department (LGED), the development project covers a total distance of 418 meters (0.418 km). The project was formally inaugurated on Friday, July 10, 2026 (26 Ashar 1433 BS), by Dr. Md. Mahabubur Rahman Liton, Honorable Member of Parliament for Mymensingh-7 (Trishal, Constituency 152).",
     content:
-      "The newly inaugurated 4-lane connecting road marks a crucial milestone in our constituency's transportation infrastructure. Constructed under the Rural Development Authority, the 14-kilometer project includes reinforced concrete bridges, drainage culverts, and solar-powered street lighting along commercial intersections. During the opening ceremony, the MP emphasized that smooth road connectivity will allow local agricultural products to reach regional markets faster, directly boosting the local economy.",
+      "He marked the official commencement of the road work by unveiling the commemorative plaque. Local residents expressed optimism that the newly paved road will significantly improve transportation, connectivity, and daily commute for the community.",
   },
   {
     id: 2,
-    title: "Free Specialist Medical Camp Serves 2,500+ Local Citizens",
+    title: "Monthly Free Medical Camp Launched Under the Initiative of MP Dr. Md. Mahabubur Rahman Liton .",
     category: "Healthcare",
     date: "July 10, 2026",
     readTime: "3 min read",
     isFeatured: false,
-    image:
-      "https://i.ibb.co.com/gbq9g0Lk/free-medical.jpg",
+    image: "https://i.ibb.co.com/gbq9g0Lk/free-medical.jpg",
     summary:
-      "A day-long health camp organized at the Central College ground provided free specialist doctor consultations, eye tests, and essential medicines.",
+      "Under the direct guidance and sponsorship of Dr. Md. Mahabubur Rahman Liton, Honorable Member of Parliament for Mymensingh-7 (Trishal-152), a free medical camp was hosted at the TMC Diagnostic & Hospital premises in Zero Point, Nazrul Avenue. ",
     content:
-      "Over 25 specialist doctors from major medical institutes participated in the medical outreach program. Services included pediatric care, cardiology screening, maternal health consultations, and free prescription distribution to low-income families across 6 unions.",
+      "Leveraging his background as a physician, Dr. Liton spearheaded this healthcare drive to ensure quality medical advice and basic diagnostics reach underserved families across Trishal. Local residents gathered to consult with specialist doctors and receive basic health screenings free of charge. ",
   },
   {
     id: 3,
-    title: "Parliament Speech: Raising Demands for Embankment Reinforcement",
+    title: "MP Dr. Mahabubur Rahman Demands Action in Budget Session to Fix 150 km of Broken Roads in Trishal. ",
     category: "Parliament",
     date: "June 28, 2026",
     readTime: "5 min read",
     isFeatured: false,
-    image:
-      "https://i.ibb.co.com/1Y8prcXM/landing3.jpg",
+    image: "https://i.ibb.co.com/1Y8prcXM/landing3.jpg",
     summary:
-      "Delivered a decisive speech during the national budget session demanding urgent budget allocations for permanent flood defense embankments.",
+      "Speaking during the national budget session in Parliament, Dr. Md. Mahabubur Rahman Liton, Member of Parliament for Mymensingh-7 (Trishal), urged the government to direct funds toward fixing a major infrastructure crisis in his constituency. He called for the immediate repair and paving of 150 kilometers of broken roads across the area.",
     content:
-      "Addressing the Speaker during the budget discussion, the Honorable MP presented data on riverbank erosion affecting local union wards. The speech called for allocating emergency water development funds to construct permanent concrete block embankments before the upcoming monsoon season.",
+      "While addressing the Speaker of the House during the budget discussions, Dr. Liton highlighted the everyday struggles of local citizens. He pointed out that 150 kilometers of rural roads are currently in severe decay, making movement nearly impossible for vehicles like buses, cars, and rickshaws. He emphasized that these road conditions create immense hardships for school children, daily earners, and emergency patients needing urgent hospital care.",
   },
   {
     id: 4,
-    title: "Smart ICT Labs Inaugurated in 8 Government High Schools",
+    title: "Smart Education and Skilled Human Resource Development",
     category: "Education",
     date: "June 15, 2026",
     readTime: "3 min read",
     isFeatured: false,
-    image:
-      "https://i.ibb.co.com/NDVLyBh/schools.jpg",
+    image: "https://i.ibb.co.com/NDVLyBh/schools.jpg",
     summary:
-      "Equipped local high schools with high-speed internet, interactive smartboards, and 20 modern computers per lab under the Digital Bangladesh initiative.",
+      "The first requirement for building a modern, merit-based society is to create opportunities for up-to-date technical and higher education alongside traditional education.",
     content:
-      "To build technical skills among high school youth, 8 government and mpo-enlisted high schools received fully functional computer labs. Local teachers have undergone specialized training to conduct coding and basic computer literacy courses starting this term.",
+      " The first requirement for building a modern, merit-based society is to create opportunities for up-to-date technical and higher education alongside traditional education. Our main goal is to coordinate local educational institutions with Jatiya Kabi Kazi Nazrul Islam University and ensure international-standard training.",
   },
 ];
 
@@ -85,7 +81,6 @@ const NewsUpdates = () => {
       <div className="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-amber-500/10 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
-        
         {/* Section Header */}
         <motion.div
           className="max-w-3xl mx-auto text-center"
@@ -101,13 +96,12 @@ const NewsUpdates = () => {
 
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
             News & Media{" "}
-            <span className="text-emerald-700 block sm:inline">
-              Updates
-            </span>
+            <span className="text-emerald-700 block sm:inline">Updates</span>
           </h2>
 
           <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
-            Stay informed with the latest press releases, parliamentary activities, community developments, and event highlights.
+            Stay informed with the latest press releases, parliamentary
+            activities, community developments, and event highlights.
           </p>
         </motion.div>
 
@@ -243,7 +237,6 @@ const NewsUpdates = () => {
             <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>
-
       </div>
 
       {/* Full Article Reader Modal */}

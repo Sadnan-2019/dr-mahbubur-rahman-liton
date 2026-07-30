@@ -108,7 +108,7 @@ const changeLanguage = (langCode) => {
       <Hero />
       <WelcomeMessage />
       <About />
-      <MyWork />
+      {/* <MyWork /> */}
       <DevelopmentProjects />
       <NewsUpdates />
       <Gallery />

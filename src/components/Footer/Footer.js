@@ -40,7 +40,7 @@ const Footer = () => {
                   Office of the MP
                 </h3>
                 <p className="text-xs font-semibold text-emerald-400 tracking-wider uppercase">
-                  Constituency No. 182
+                  Constituency No. 152
                 </p>
               </div>
             </div>
@@ -106,7 +106,7 @@ const Footer = () => {
           </div>
 
           {/* Column 3: Citizen Portals (3 Cols) */}
-          <div className="lg:col-span-3 space-y-4">
+          {/* <div className="lg:col-span-3 space-y-4">
             <h4 className="text-sm font-bold text-white uppercase tracking-wider border-b border-slate-800 pb-2">
               Citizen Portals
             </h4>
@@ -137,7 +137,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Column 4: Emergency Contacts & Secretariat (3 Cols) */}
           <div className="lg:col-span-3 space-y-4">
