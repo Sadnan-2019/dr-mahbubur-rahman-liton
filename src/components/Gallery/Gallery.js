@@ -12,83 +12,87 @@ import {
   FaArrowRight,
 } from "react-icons/fa6";
 
-
- 
-
- 
 // Gallery Items tailored for a Bangladeshi MP
 const galleryItems = [
   {
     id: 1,
-    title: "Parliamentary Debate on Flood Embankment Protection",
+    title: "Parliamentary Speech On Budget 2026",
     category: "parliament",
     categoryLabel: "Parliament",
     date: "July 12, 2026",
     location: "Jatiya Sangsad Bhaban, Dhaka",
-    image:
-      "https://i.ibb.co.com/23HpXmKS/Dev-work1.webp",
+    image: "https://i.ibb.co.com/1Y8prcXM/landing3.jpg",
     caption:
       "Addressing the National Parliament during the budget discussion session to demand allocations for riverbank protection in rural unions.",
   },
   {
     id: 2,
     title: "Inauguration of New 4-Lane Upazila Connecting Highway",
-    category: "projects",
-    categoryLabel: "Projects",
+    category: "constituency",
+    categoryLabel: "Constituency",
     date: "June 25, 2026",
     location: "Central Upazila Junction",
-    image:
-      "https://i.ibb.co.com/6J0B1TPv/landing4.webp",
+    image: "https://i.ibb.co.com/WWnQvcz1/Capture.jpg",
     caption:
       "Laying the foundation stone and inspecting the ongoing 14 km asphalt road development project for better local connectivity.",
   },
   {
     id: 3,
-    title: "Grassroots Townhall & Open Grievance Meeting",
+    title: "Tree Plantation Drive",
     category: "constituency",
     categoryLabel: "Constituency Visits",
     date: "June 18, 2026",
     location: "Union Parishad Auditorium",
-    image:
-      "https://i.ibb.co.com/LWPRCKt/landing2.webp",
+    image: "https://i.ibb.co.com/6c8G2m2L/treeplantation.jpg",
     caption:
       "Direct listening session with local ward members and residents to address local utility and public healthcare complaints.",
   },
   {
     id: 4,
     title: "Distribution of Agricultural Seedlings & Fertilizer",
-    category: "relief",
-    categoryLabel: "Relief & Aid",
+    category: "constituency",
+    categoryLabel: "Constituency Visits",
     date: "May 30, 2026",
     location: "Agricultural Growth Center",
-    image:
-      "https://i.ibb.co.com/6c8G2m2L/treeplantation.jpg",
+    image: "https://i.ibb.co.com/svvRcZKb/dr-liton-with-pm3-webp.jpg",
     caption:
       "Handing over subsidized high-yield seeds, fertilizers, and solar pump accessories to 500+ small-scale Boro farmers.",
   },
+   
+ 
+
   {
     id: 5,
-    title: "Inauguration of High School ICT & Computer Lab",
-    category: "projects",
-    categoryLabel: "Projects",
-    date: "May 14, 2026",
-    location: "Model Girls High School",
-    image:
-      "https://i.ibb.co.com/vCW8ky4b/US-CAUCUS.jpg",
+    title: "Bangladesh Institute of Parliamentary Studies (BIPS)",
+    category: "parliament",
+    categoryLabel: "Parliament",
+    date: "July 12, 2026",
+    location: "Jatiya Sangsad Bhaban, Dhaka",
+    image: "https://i.ibb.co.com/LWPRCKt/landing2.webp",
     caption:
-      "Unveiling the new digital classroom lab equipped with high-speed internet and modern computers for female students.",
+      "Addressing the National Parliament during the budget discussion session to demand allocations for riverbank protection in rural unions.",
   },
   {
     id: 6,
-    title: "Youth Sports Championship Trophy Handover",
-    category: "events",
-    categoryLabel: "Public Events",
-    date: "April 28, 2026",
-    location: "District Stadium Ground",
-    image:
-      "https://i.ibb.co.com/q3H0qG2B/sports.jpg",
+    title: "Bangladesh Institute of Parliamentary Studies (BIPS)",
+    category: "parliament",
+    categoryLabel: "Parliament",
+    date: "July 12, 2026",
+    location: "Jatiya Sangsad Bhaban, Dhaka",
+    image: "https://i.ibb.co.com/pjpQ7R9Z/BIPS-2.jpg",
     caption:
-      "Awarding trophies and sports kits to winning union teams at the annual Inter-Union Football Championship final.",
+      "Addressing the National Parliament during the budget discussion session to demand allocations for riverbank protection in rural unions.",
+  },
+  {
+    id: 7,
+    title: "The Caucus of America in the National Parliament of Bangladesh",
+    category: "parliament",
+    categoryLabel: "Parliament",
+    date: "July 12, 2026",
+    location: "Jatiya Sangsad Bhaban, Dhaka",
+    image: "https://i.ibb.co.com/0j7nvZfT/US-CAUCUS.jpg",
+    caption:
+      "Addressing the National Parliament during the budget discussion session to demand allocations for riverbank protection in rural unions.",
   },
 ];
 
@@ -97,9 +101,9 @@ const filterCategories = [
   { id: "all", label: "All Photos" },
   { id: "parliament", label: "Parliament" },
   { id: "constituency", label: "Constituency Visits" },
-  { id: "projects", label: "Projects" },
-  { id: "relief", label: "Relief & Aid" },
-  { id: "events", label: "Public Events" },
+  // { id: "projects", label: "Projects" },
+  // { id: "relief", label: "Relief & Aid" },
+  // { id: "events", label: "Public Events" },
 ];
 
 const Gallery = () => {
@@ -121,7 +125,7 @@ const Gallery = () => {
   const handlePrev = useCallback(() => {
     if (lightboxIndex !== null) {
       setLightboxIndex((prev) =>
-        prev === 0 ? filteredPhotos.length - 1 : prev - 1
+        prev === 0 ? filteredPhotos.length - 1 : prev - 1,
       );
     }
   }, [lightboxIndex, filteredPhotos.length]);
@@ -144,7 +148,6 @@ const Gallery = () => {
       <div className="absolute bottom-10 -left-20 w-96 h-96 rounded-full bg-amber-500/10 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
-        
         {/* Section Header */}
         <motion.div
           className="max-w-3xl mx-auto text-center"
@@ -160,14 +163,13 @@ const Gallery = () => {
 
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
             Photo Gallery &{" "}
-            <span className="text-emerald-700 block sm:inline">
-              Activities
-            </span>
+            <span className="text-emerald-700 block sm:inline">Activities</span>
           </h2>
 
           <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
-            A visual archive documenting public engagements, parliamentary sessions, 
-            development projects, and community relief efforts across the constituency.
+            A visual archive documenting public engagements, parliamentary
+            sessions, development projects, and community relief efforts across
+            the constituency.
           </p>
         </motion.div>
 
@@ -181,14 +183,20 @@ const Gallery = () => {
                   key={cat.id}
                   onClick={() => setActiveFilter(cat.id)}
                   className={`relative px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-colors duration-300 z-10 ${
-                    isActive ? "text-white" : "text-slate-600 hover:text-slate-900"
+                    isActive
+                      ? "text-white"
+                      : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="activeGalleryFilter"
                       className="absolute inset-0 bg-emerald-700 rounded-xl shadow-md z-[-1]"
-                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 30,
+                      }}
                     />
                   )}
                   {cat.label}
@@ -199,7 +207,10 @@ const Gallery = () => {
         </div>
 
         {/* Photo Grid */}
-        <motion.div layout className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          layout
+          className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           <AnimatePresence mode="popLayout">
             {filteredPhotos.map((photo, idx) => (
               <motion.div
@@ -236,11 +247,12 @@ const Gallery = () => {
                 <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
                   <div className="flex items-center gap-3 text-[11px] text-slate-300 mb-1.5">
                     <span className="flex items-center gap-1">
-                      <FaCalendarDays className="text-amber-400" /> {photo.date}
+                      {/* <FaCalendarDays className="text-amber-400" /> {photo.date} */}
                     </span>
                     <span>•</span>
                     <span className="flex items-center gap-1 truncate">
-                      <FaLocationDot className="text-amber-400" /> {photo.location}
+                      {/* <FaLocationDot className="text-amber-400" />{" "}
+                      {photo.location} */}
                     </span>
                   </div>
 
@@ -264,14 +276,12 @@ const Gallery = () => {
             <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-1" />
           </button>
         </div>
-
       </div>
 
       {/* Lightbox Modal */}
       <AnimatePresence>
         {lightboxIndex !== null && (
           <div className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex flex-col justify-between p-4 sm:p-8">
-            
             {/* Lightbox Header Bar */}
             <div className="flex items-center justify-between text-white max-w-7xl mx-auto w-full z-10">
               <span className="text-xs sm:text-sm font-semibold text-slate-300">
@@ -325,11 +335,13 @@ const Gallery = () => {
 
               <div className="flex items-center justify-center gap-4 text-xs text-slate-400 mt-2">
                 <span className="flex items-center gap-1">
-                  <FaCalendarDays className="text-amber-400" /> {filteredPhotos[lightboxIndex].date}
+                  <FaCalendarDays className="text-amber-400" />{" "}
+                  {filteredPhotos[lightboxIndex].date}
                 </span>
                 <span>•</span>
                 <span className="flex items-center gap-1">
-                  <FaLocationDot className="text-amber-400" /> {filteredPhotos[lightboxIndex].location}
+                  <FaLocationDot className="text-amber-400" />{" "}
+                  {filteredPhotos[lightboxIndex].location}
                 </span>
               </div>
 
@@ -337,7 +349,6 @@ const Gallery = () => {
                 {filteredPhotos[lightboxIndex].caption}
               </p>
             </div>
-
           </div>
         )}
       </AnimatePresence>

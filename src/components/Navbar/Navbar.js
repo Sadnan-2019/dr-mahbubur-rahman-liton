@@ -53,16 +53,7 @@ const Navbar = ({ onLanguageChange }) => {
         { name: "Public Hearing Schedule", path: "/constituency/hearings" },
       ],
     },
-    {
-      name: "Services & Aid",
-      path: "/services",
-      dropdown: [
-        { name: "DO Recommendation Letter", path: "/services/do-letter" },
-        { name: "Educational Stipends", path: "/services/stipends" },
-        { name: "Emergency Medical Aid", path: "/services/medical-aid" },
-        { name: "Character Certificate", path: "/services/certificate" },
-      ],
-    },
+    
     { name: "Parliamentary Speeches", path: "/speeches" },
     { name: "Contact", path: "/contact" },
   ];
