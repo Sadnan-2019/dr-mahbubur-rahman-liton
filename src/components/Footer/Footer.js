@@ -105,42 +105,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3: Citizen Portals (3 Cols) */}
-          {/* <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider border-b border-slate-800 pb-2">
-              Citizen Portals
-            </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm">
-              <li>
-                <a href="#services" className="text-slate-400 hover:text-emerald-400 transition-colors">
-                  DO Recommendation Request
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="text-slate-400 hover:text-emerald-400 transition-colors">
-                  Educational Stipend Application
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="text-slate-400 hover:text-emerald-400 transition-colors">
-                  Emergency Medical Aid Request
-                </a>
-              </li>
-              <li>
-                <a href="https://bangladesh.gov.bd" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-emerald-400 transition-colors">
-                  National Web Portal (bangladesh.gov.bd)
-                </a>
-              </li>
-              <li>
-                <a href="https://parliament.gov.bd" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-emerald-400 transition-colors">
-                  Bangladesh Parliament Portal
-                </a>
-              </li>
-            </ul>
-          </div> */}
-
-          {/* Column 4: Emergency Contacts & Secretariat (3 Cols) */}
-          <div className="lg:col-span-3 space-y-4">
+          {/* Column 3: Secretariat Helpline (6 Cols to fill right space nicely) */}
+          <div className="lg:col-span-6 space-y-4">
             <h4 className="text-sm font-bold text-white uppercase tracking-wider border-b border-slate-800 pb-2">
               Secretariat Helpline
             </h4>
@@ -148,25 +114,29 @@ const Footer = () => {
             <div className="space-y-3 text-xs sm:text-sm text-slate-400">
               <div className="flex items-start gap-2.5">
                 <FaLocationDot className="text-emerald-400 mt-1 shrink-0" />
-                <span>Constituency Public Office, Main Bazar Road, Ward 04</span>
+                <span>TMC, Zeropoint, Noudhar, Trishal, Mymensingh – 2220</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <FaPhone className="text-emerald-400 shrink-0" />
-                <span>+880 1700-000000 (Hotline)</span>
+                <a href="tel:+8801711004445" className="hover:text-emerald-400 transition-colors">
+                  +880 1711 004445
+                </a>
               </div>
               <div className="flex items-center gap-2.5">
                 <FaEnvelope className="text-emerald-400 shrink-0" />
-                <span>contact@mp-office.gov.bd</span>
+                <a href="mailto:mymensingh.7@parliament.gov.bd" className="hover:text-emerald-400 transition-colors">
+                  mymensingh.7@parliament.gov.bd
+                </a>
               </div>
             </div>
 
             {/* National Emergency Services Badge */}
-            <div className="pt-2">
+            <div className="pt-2 max-w-sm">
               <div className="bg-slate-900 border border-slate-800 rounded-2xl p-3.5 flex items-center gap-3">
                 <FaShieldHalved className="text-2xl text-amber-400 shrink-0" />
                 <div>
                   <span className="block text-[11px] font-bold text-white">National Helplines</span>
-                  <span className="text-[10px] text-slate-400">Emergency: 999 | Info: 333</span>
+                  <span className="text-[10px] text-slate-400">Emergency: 999 </span>
                 </div>
               </div>
             </div>

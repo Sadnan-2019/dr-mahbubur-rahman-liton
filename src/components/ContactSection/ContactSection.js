@@ -12,16 +12,16 @@ import {
   FaComments,
 } from "react-icons/fa6";
 
-// Office Location Data tailored for a Bangladeshi MP
+// Updated Office Location Data with exact user-provided details
 const officeLocations = [
   {
     id: "constituency",
     title: "Constituency Public Office",
-    subtitle: "For local public hearings, DO letters & regional matters",
+    subtitle: "For local public hearings & regional matters",
     icon: <FaUserGroup className="text-emerald-600" />,
-    address: "Constituency Office Road, Main Bazar Area, Ward No. 04, Bangladesh",
-    phone: "+880 1700-000000",
-    email: "constituency@mp-office.gov.bd",
+    address: "TMC, Zeropoint, Noudhar, Trishal, Mymensingh – 2220",
+    phone: "+880 1711 004445",
+    email: "mymensingh.7@parliament.gov.bd",
     hours: "Sat - Thu: 9:00 AM - 5:00 PM (Public Hearing: Sun & Tue 10 AM - 1 PM)",
     highlight: "Primary Constituent Hub",
   },
@@ -30,9 +30,9 @@ const officeLocations = [
     title: "Jatiya Sangsad Bhaban Office",
     subtitle: "For parliamentary committees, policy & official delegations",
     icon: <FaBuildingColumns className="text-amber-600" />,
-    address: "Room #412, Block-B, Jatiya Sangsad Bhaban, Sher-e-Bangla Nagar, Dhaka-1207",
-    phone: "+880 2-99999999",
-    email: "parliament@mp-office.gov.bd",
+    address: "Jatiya Sangsad Bhaban, Sher-e-Bangla Nagar, Dhaka-1207",
+    phone: "+880 1711 004445 (PA)",
+    email: "mymensingh.7@parliament.gov.bd",
     hours: "Sun - Thu: 10:00 AM - 4:00 PM (By Official Appointment)",
     highlight: "National Secretariat",
   },
@@ -82,7 +82,6 @@ const ContactSection = () => {
       <div className="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-amber-500/10 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
-        
         {/* Section Header */}
         <motion.div
           className="max-w-3xl mx-auto text-center"
@@ -110,8 +109,7 @@ const ContactSection = () => {
         </motion.div>
 
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          
-          {/* Left Column: Office Details Cards (5 Cols) */}
+          {/* Left Column: Office Details Cards */}
           <motion.div
             className="lg:col-span-5 space-y-6"
             initial={{ opacity: 0, x: -30 }}
@@ -146,14 +144,20 @@ const ContactSection = () => {
 
                   <div className="flex items-center gap-3">
                     <FaPhone className="text-emerald-400 shrink-0" />
-                    <a href={`tel:${office.phone}`} className="hover:text-emerald-400 transition-colors">
+                    <a
+                      href={`tel:${office.phone.replace(/[^0-9+]/g, "")}`}
+                      className="hover:text-emerald-400 transition-colors"
+                    >
                       {office.phone}
                     </a>
                   </div>
 
                   <div className="flex items-center gap-3">
                     <FaEnvelope className="text-emerald-400 shrink-0" />
-                    <a href={`mailto:${office.email}`} className="hover:text-emerald-400 transition-colors">
+                    <a
+                      href={`mailto:${office.email}`}
+                      className="hover:text-emerald-400 transition-colors"
+                    >
                       {office.email}
                     </a>
                   </div>
@@ -167,7 +171,7 @@ const ContactSection = () => {
             ))}
           </motion.div>
 
-          {/* Right Column: Interactive Form (7 Cols) */}
+          {/* Right Column: Interactive Form */}
           <motion.div
             className="lg:col-span-7 bg-slate-800/90 backdrop-blur-md rounded-3xl p-6 sm:p-10 border border-slate-700/80 shadow-2xl relative"
             initial={{ opacity: 0, x: 30 }}
@@ -320,7 +324,6 @@ const ContactSection = () => {
               </form>
             )}
           </motion.div>
-
         </div>
       </div>
     </section>

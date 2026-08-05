@@ -9,6 +9,7 @@ import {
   FaFileSignature,
   FaLanguage,
 } from "react-icons/fa6";
+import logo from "../../assets/Nationalprliament.png"
 
 const Navbar = ({ onLanguageChange }) => {
   const [open, setOpen] = useState(false);
@@ -67,7 +68,7 @@ const Navbar = ({ onLanguageChange }) => {
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5 text-emerald-400 font-medium">
               <FaPhone className="text-[10px]" />
-              Helpline: <a href="tel:+8801700000000" className="hover:underline text-white">+880 1700-000000</a>
+              Helpline: <a href="tel:+880 1711 004445" className="hover:underline text-white">+880 1711 004445</a>
             </span>
             <span className="hidden sm:inline text-slate-500">|</span>
             <span className="hidden sm:inline text-slate-400">
@@ -90,8 +91,12 @@ const Navbar = ({ onLanguageChange }) => {
         
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-11 h-11 rounded-xl bg-emerald-800 text-emerald-100 flex items-center justify-center text-xl shadow-md group-hover:bg-emerald-700 transition-colors">
-            <FaBuildingColumns />
+          <div className="w-11 h-11 rounded-xl  flex items-center justify-center text-xl    ">
+            <img
+                src={logo}
+                alt="Dr. Mahbubur Rahman Liton"
+                className=" "
+              />
           </div>
           <div>
             <span className="block text-lg font-black text-slate-900 leading-none">
