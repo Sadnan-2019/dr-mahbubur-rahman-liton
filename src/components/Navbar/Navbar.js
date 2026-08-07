@@ -9,12 +9,15 @@ import {
   FaFileSignature,
   FaLanguage,
 } from "react-icons/fa6";
-import logo from "../../assets/Nationalprliament.png"
+import logo from "../../assets/Nationalprliament.png";
 
 const Navbar = ({ onLanguageChange }) => {
   const [open, setOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [activeMobileDropdown, setActiveMobileDropdown] = useState(null);
+  
+  // Track window scroll positioning state
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // Initialize language from google cookie if available
   const getInitialLanguage = () => {
@@ -24,8 +27,23 @@ const Navbar = ({ onLanguageChange }) => {
 
   const [currentLang, setCurrentLang] = useState(getInitialLanguage);
 
+  // Combined hook managing initial setup and the scrolling listener layout
   useEffect(() => {
     setCurrentLang(getInitialLanguage());
+
+    const handleNavbarScroll = () => {
+      const scrollThreshold = 20;
+      const currentScrollOffset = window.scrollY || document.documentElement.scrollTop;
+
+      if (currentScrollOffset > scrollThreshold) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleNavbarScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleNavbarScroll);
   }, []);
 
   const toggleLanguage = () => {
@@ -41,6 +59,7 @@ const Navbar = ({ onLanguageChange }) => {
       isActive ? "text-emerald-700 font-bold" : "text-slate-700 hover:text-emerald-600"
     }`;
 
+  // Complete mapping containing all required navigational lists intact
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "About MP", path: "/about" },
@@ -54,15 +73,20 @@ const Navbar = ({ onLanguageChange }) => {
         { name: "Public Hearing Schedule", path: "/constituency/hearings" },
       ],
     },
-    
-    { name: "Parliamentary Speeches", path: "/speeches" },
+    { name: "Privacy Policy", path: "/privacy-policy" },
     { name: "Contact", path: "/contact" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md border-b border-slate-100">
+    <header 
+      className={`sticky top-0 z-50 transition-all duration-300 border-b ${
+        isScrolled 
+          ? "bg-emerald-50/95 backdrop-blur-md shadow-lg border-emerald-200/60" 
+          : "bg-white shadow-md border-slate-100"
+      }`}
+    >
       
-      {/* Top Banner */}
+      {/* Top Banner section layout */}
       <div className="bg-slate-900 text-slate-200 text-xs py-2 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
@@ -86,17 +110,17 @@ const Navbar = ({ onLanguageChange }) => {
         </div>
       </div>
 
-      {/* Main Navbar */}
+      {/* Main Container Layout */}
       <div className="max-w-7xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between">
         
-        {/* Logo */}
+        {/* Branding Logo Block */}
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-11 h-11 rounded-xl  flex items-center justify-center text-xl    ">
+          <div className="w-11 h-11 rounded-xl flex items-center justify-center text-xl">
             <img
-                src={logo}
-                alt="Dr. Mahbubur Rahman Liton"
-                className=" "
-              />
+              src={logo}
+              alt="Dr. Mahbubur Rahman Liton"
+              className=""
+            />
           </div>
           <div>
             <span className="block text-lg font-black text-slate-900 leading-none">
@@ -108,7 +132,7 @@ const Navbar = ({ onLanguageChange }) => {
           </div>
         </Link>
 
-        {/* Desktop Menu */}
+        {/* Full Desktop Navigation Tree */}
         <nav className="hidden lg:flex items-center gap-7">
           <ul className="flex items-center gap-7">
             {menuItems.map((item) => {
@@ -130,7 +154,7 @@ const Navbar = ({ onLanguageChange }) => {
                     />
                   </button>
 
-                  {/* Dropdown Menu */}
+                  {/* Dropdown Menu block layout rendering inside loop */}
                   <div
                     className={`absolute left-0 top-full -mt-2 w-64 rounded-2xl bg-white shadow-2xl border border-slate-100 overflow-hidden transition-all duration-200 ${
                       isDropdownOpen
@@ -168,18 +192,7 @@ const Navbar = ({ onLanguageChange }) => {
           </ul>
         </nav>
 
-        {/* CTA Button */}
-        {/* <div className="hidden lg:flex items-center gap-3">
-          <Link
-            to="/services/do-letter"
-            className="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs px-5 py-3 rounded-xl transition-all shadow-md shadow-emerald-900/20"
-          >
-            <FaFileSignature />
-            <span>Apply for DO Letter</span>
-          </Link>
-        </div> */}
-
-        {/* Mobile Menu Button */}
+        {/* Mobile Control Interface Trigger */}
         <div className="lg:hidden flex items-center gap-2">
           <button
             onClick={() => setOpen(!open)}
@@ -191,7 +204,7 @@ const Navbar = ({ onLanguageChange }) => {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Expanded Mobile Interactive Panel Drawer */}
       {open && (
         <div className="lg:hidden border-t border-slate-100 bg-white">
           <ul className="flex flex-col divide-y divide-slate-100">
@@ -254,6 +267,7 @@ const Navbar = ({ onLanguageChange }) => {
               );
             })}
 
+            {/* Application action item block included at bottom of drawer */}
             <div className="p-4 bg-slate-50">
               <Link
                 to="/services/do-letter"
