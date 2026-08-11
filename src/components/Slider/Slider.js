@@ -12,8 +12,11 @@ import "swiper/css/effect-fade";
 
 // Demo Images
 import slide1 from "../../assets/2026.webp";
-import slide2 from "../../assets/lanading6.webp";
-import slide3 from "../../assets/NDC.webp";
+import slide2 from "../../assets/fisharis.jpg";
+import slide3 from "../../assets/visit.webp";
+import slide4 from "../../assets/health.webp";
+import slide5 from "../../assets/sports.webp";
+import slide6 from "../../assets/Trishalvisit.webp";
 import "./Slider.css"; // 
 
 // Motion variants for smooth staggered entry
@@ -54,10 +57,10 @@ const Hero = () => {
     {
       id: 2,
       image: slide2,
-      subtitle: "Building a Better Future",
-      title: "Together We Create Lasting Development",
+      subtitle: "Establishing National Distinction",
+      title: "Transforming Trishal into a National Fisheries & Agribusiness Hub",
       description:
-        "Supporting education, healthcare, infrastructure, youth empowerment, and social welfare to build a stronger and more prosperous constituency.",
+        " Eliminating middlemen to guarantee fair market pricing for fish, poultry, and livestock producers. Establishing local fish processing centers, cold storage units, and lowering feed costs for farmers.",
       primaryBtn: "Our Achievements",
       primaryLink: "/achievements",
       secondaryBtn: "Latest News",
@@ -66,10 +69,46 @@ const Hero = () => {
     {
       id: 3,
       image: slide3,
-      subtitle: "Serving the People",
-      title: "Committed to Every Citizen",
+      subtitle: "Zero Unpaved Roads & Planned Urbanization",
+      title: "Connecting Every Union with Modern Roads, Bridges & Urban Amenities",
       description:
-        "Working closely with the community to solve local challenges, strengthen public services, and ensure inclusive development for future generations.",
+        " Priority road paving, drainage construction, and bridge development across all 12 Unions. Securing special municipal funds to resolve town congestion and build public recreation parks.",
+      primaryBtn: "Submit Grievance",
+      primaryLink: "/contact",
+      secondaryBtn: "Photo Gallery",
+      secondaryLink: "/gallery",
+    },
+    {
+      id: 4,
+      image: slide4,
+      subtitle: "ZHealthcare as a Fundamental Right",
+      title: "Elevating Trishal Healthcare into a National Model of Excellence",
+      description:
+        "  24/7 attending physicians, essential medicine distribution, and emergency care readiness. Specialized rural clinic networks and telemedicine services for marginalized families.",
+      primaryBtn: "Submit Grievance",
+      primaryLink: "/contact",
+      secondaryBtn: "Photo Gallery",
+      secondaryLink: "/gallery",
+    },
+    {
+      id: 5,
+      image: slide5,
+      subtitle: "Empowered Youth, Drug-Free Society",
+      title: "Building Stadiums, School Championships & Empowering students in Sports",
+      description:
+        "Constructing a central stadium in Trishal and mini-stadiums across all 12 Unions. Annual inter-college tournaments, institutional facilities for female athletes, and active anti-drug campaigns. ",
+      primaryBtn: "Submit Grievance",
+      primaryLink: "/contact",
+      secondaryBtn: "Photo Gallery",
+      secondaryLink: "/gallery",
+    },
+    {
+      id: 6,
+      image: slide6,
+      subtitle: "Serving Every Citizen",
+      title: "Dedicated Worker Welfare Funds, Religious Support & Inter-Faith Harmony",
+      description:
+        "Emergency financial support for transport workers, drivers, helpers, and construction laborers. Special allocations for mosques, madrasas, government honorariums for Imams/Muezzins, and safety for all religious communities.",
       primaryBtn: "Submit Grievance",
       primaryLink: "/contact",
       secondaryBtn: "Photo Gallery",
@@ -122,8 +161,7 @@ const Hero = () => {
                 />
 
                 {/* Gradient Overlays for High Contrast & Legibility */}
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-900/80 to-transparent z-10" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/30 z-10" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/55 to-[#0f0f0f]/65 z-10" />
 
                 {/* Hero Content Area */}
                 <div className="relative z-20 w-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-20">
@@ -152,7 +190,7 @@ const Hero = () => {
                           initial="hidden"
                           animate="visible"
                           exit="exit"
-                          className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.15] tracking-tight mb-4 sm:mb-6 drop-shadow-md"
+                          className="text-3xl sm:text-5xl lg:text-6xl xl:text-6xl font-black text-white leading-[1.15] tracking-tight mb-4 sm:mb-6 drop-shadow-md"
                         >
                           {slide.title}
                         </motion.h1>
