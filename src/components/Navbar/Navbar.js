@@ -70,7 +70,7 @@ const Navbar = ({ onLanguageChange }) => {
         { name: "Constituency Profile & Map", path: "/constituency/profile" },
         { name: "Development Projects", path: "/constituency/projects" },
         { name: "Union & Ward Representation", path: "/constituency/unions" },
-        { name: "Public Hearing Schedule", path: "/constituency/hearings" },
+       
       ],
     },
     { name: "Privacy Policy", path: "/privacy-policy" },

@@ -56,7 +56,7 @@ const Footer = () => {
               </span>
               <div className="flex items-center gap-3">
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/DrMahbubTrishal"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-emerald-600 hover:border-emerald-500 flex items-center justify-center transition-all duration-300"
@@ -65,7 +65,7 @@ const Footer = () => {
                   <FaFacebookF className="text-sm" />
                 </a>
                 <a
-                  href="https://youtube.com"
+                  href="https://www.youtube.com/@DrMahbubTrishal"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-red-600 hover:border-red-500 flex items-center justify-center transition-all duration-300"
@@ -74,7 +74,7 @@ const Footer = () => {
                   <FaYoutube className="text-sm" />
                 </a>
                 <a
-                  href="https://x.com"
+                  href="https://x.com/DrMahbubTrishal"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 hover:border-slate-600 flex items-center justify-center transition-all duration-300"
